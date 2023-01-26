@@ -18,7 +18,7 @@ const Card = () => {
 
   return (
     <div>
-      <div>
+      <div className='card-container'>
         <div className='image'></div>
         <div className='location' ></div>
         <div className='project-header' >
@@ -26,25 +26,25 @@ const Card = () => {
             <p>{description}</p>
         </div>
         <div className='pledge' >
-            <div>
+            <div className='pledge-container'>
                 <span className="pledge-amount" >
                     ${pledge_amount}
                 </span>
+                <span className='backers' >
+                    {backers}
+                </span>
+                <span className='daystogo' >22</span>
+                {/* <span className='goal-date' >
+                    {goal_date}
+                </span> */}
                 <span className='pledge-goal' >
                     <span className='money' >
                         ${pledge_goal}
                     </span>
                 </span>
-                <span className='backers' >
-                    {backers}
-                </span>
                 <span className='backers-text' >
                     {backers}
                 </span>
-                <span className='goal-date' >
-                    {goal_date}
-                </span>
-                <span className='daystogo' >22</span>
                 <span className='daystogo-text' >days to go</span>
             </div>
         </div>
@@ -54,6 +54,10 @@ const Card = () => {
         <div className='events-grid' >
             <a href="">Back this project</a>
             <div></div>
+            <p>
+                <a href="">All or nothing.  </a>
+                This project will only be funded if it reaches its goal by {goal_date}.
+            </p>
         </div>
       </div>
       <div className='backer-trust'>

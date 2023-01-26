@@ -19,7 +19,7 @@ const NavBar = () => {
           <nav className="nav-bar" >
             <div className="menu" >
                 <div  className='menu-item' >
-                    <Link className="link" to="/campaign" activestyle="true">
+                    <Link className="link" to="/" activestyle="true">
                         Campaign
                     </Link>  
                 </div>
