@@ -6,6 +6,7 @@ const Campaign = () => {
 
 const [campaign, setCampaign] = useRecoilState(campaignState)   
 
+
   useEffect(() => {
     fetch(`http://localhost:3000/campaign/${id}`, {
       mode: "cors",
@@ -15,6 +16,7 @@ const [campaign, setCampaign] = useRecoilState(campaignState)
         setCampaign(data);
       });
   }, []);
+
 
 
   return (
