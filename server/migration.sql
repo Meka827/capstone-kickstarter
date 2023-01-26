@@ -27,9 +27,9 @@ CREATE TABLE creator (
 );
 
 
-INSERT INTO projects (title, description, pledge_amount, backers, goal_date)
+INSERT INTO projects (title, description, pledge_amount,pledge_goal, backers, goal_date)
 VALUES ('Hero Realms Dungeons', 'A new 80 card market deck, 6 new characters, and an all-new 12-encounter 
-dungeon campaign for 1-5 players!', 371523, 2479, '2023-02-16 09:00:00');
+dungeon campaign for 1-5 players!', 371523, 20000, 2479, '2023-02-16 09:00:00');
 
 INSERT INTO campaign (project_id, creator_id, title, image, summary)
 VALUES (1, 1, 'The Adventure Begins!', 'images/hero-realms.png', 'If you are new to Hero Realms, Dungeons 
