@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
+import NavBar from './NavBar';
+
 
 const faqs = [
     {
@@ -34,11 +36,13 @@ const Faq = () => {
     }
 
   return (
+    <>
+    <NavBar />
     <div className='wrapper'>
         <div className='accordian'>
            
             {faqs.map((item, i) => (
-             <div className='item'>
+             <div key={item.id} className='item'>
                 <div className='faq-question' onClick={() => toggle(i)}>
                     <h2>{item.question}</h2>
                     <span>{selected === i ? '-' : '+'}</span>
@@ -50,48 +54,8 @@ const Faq = () => {
 
         </div>
     </div>
+    </>
   )
 }
 
 export default Faq
-/*.wrapper{
-  display: flex;
-  height: 100vh;
-  width: 100vh;
-  justify-content: center;
-  align-content: center;
-}
-
-.accordian{
-  width: 650px;
-}
-
-.item{
-  background: lightgray;
-  margin-bottom: 5px;
-  padding: 10px 20px;
-}
-
-.faq-question{
-  color:black;
-  display: flex;
-  overflow: hidden;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-.faq-answer, .faq-date{
-  color: black;
-}
-
-.faq-answer.show{
-  display: block;
-  height: auto;
-  max-height: 9999px;
-  transition: all 0.5 cubic-bezier(0,1,0,1);
-}
-
-.hide{
-  display: none;
-}*/
