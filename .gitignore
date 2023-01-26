@@ -1,5 +1,5 @@
 /node_modules/
 vite.config.js
-server
-/Capstone/server
-/Capstone/images
+/server
+/server/server.js
+/server/migration.sql
