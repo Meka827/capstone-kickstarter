@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
 // import Updates from './components/Updates'
 // import Comments from './components/Comments'
 import Card from './components/Card'
-
+import Campaign from './Components/Campaign';
 
 
 
@@ -46,11 +46,12 @@ const App = () => {
   return (
     <>
     <div>Hello World</div>
+    <div><Campaign /></div>
     <Router>
     <Routes>
         <Route path='/' exact element={<Card />} />
-        {/* <Route path='/campaign' element={<Campaign />} />
-        <Route path='/faq' element={<Faq />} />
+        <Route path='/campaign' element={<Campaign />} />
+        {/* <Route path='/faq' element={<Faq />} />
         <Route path='/updates' element={<Updates />} />
         <Route path='/comments' element={<Comments />} />
         <Route path='/community' element={<Community />} /> */}
