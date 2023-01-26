@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
 // import Faq from './components/Faq'
-// import Campaign from './components/Campaign'
 // import Community from './components/Community'
 // import Updates from './components/Updates'
 // import Comments from './components/Comments'
 import Card from './components/Card'
-import Campaign from './Components/Campaign';
+import Campaign from './components/Campaign';
 
 
 
@@ -46,7 +45,6 @@ const App = () => {
   return (
     <>
     <div>Hello World</div>
-    <div><Campaign /></div>
     <Router>
     <Routes>
         <Route path='/' exact element={<Card />} />

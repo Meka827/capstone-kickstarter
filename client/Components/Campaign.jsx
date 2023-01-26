@@ -14,7 +14,8 @@ const obj = {
 const Campaign = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
 
-  setCampaign(obj);
+  setCampaign(obj)
+  // setCampaign(obj);
 
   //   useEffect(() => {
   //     fetch(`http://localhost:3000/campaign/${id}`, {

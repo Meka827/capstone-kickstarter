@@ -3,3 +3,4 @@ vite.config.js
 /server
 /server/server.js
 /server/migration.sql
+/vite.cofig.js
