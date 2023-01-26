@@ -18,4 +18,4 @@ CREATE TABLE campaign (
     image TEXT,
     summary TEXT
 );
-
+     
