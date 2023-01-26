@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "dev:server": "nodemom server/server.js",
+    "dev:server": "nodemon server/server.js",
     "dev:client": "vite"
   },
   "dependencies": {
