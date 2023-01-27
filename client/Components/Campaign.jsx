@@ -1,44 +1,52 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { campaignState } from "../state";
-
-const obj = {
-  project_id: 1,
-  creator_id: 1,
-  title: "Hero Realms Dungeons",
-  image: "images/hero-realms.png",
-  summary:
-    "A new 80 card market deck, 6 new characters, and an all-new 12-encounter \ndungeon campaign for 1-5 players!",
-};
+import { useEffect } from "react";
 
 const Campaign = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
 
-  setCampaign(obj);
-  // setCampaign(obj);
-
-  //   useEffect(() => {
-  //     fetch(`http://localhost:3000/campaign/${id}`, {
-  //       mode: "cors",
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setCampaign(data);
-  //       });
-  //   }, []);
-
   return (
     <div>
-      <div>
+      <div className="campaign-container">
         <div>Story</div>
-        <div>The Adventure Begins!</div>
+        <div>
+          <h1>
+            <b>The Adventure Begins!</b>
+          </h1>
+          <div>
+            If you are new to Hero Realms, Dungeons is a fantastic place to
+            start. In this single box you get all the amazing gameplay Hero
+            Realm has to offer!
+          </div>
+        </div>
       </div>
       <div className="image"></div>
+      <div className="feature-bullets">
+        <ul>
+          <li>2-4 player PVP with basic decks</li>
+          <li>
+            2 player PVP with the included Alchemist and Barbarian Character
+            packs.{" "}
+          </li>
+          <li>
+            Solo and 2-player cooperative play through a 12-encounter dungeon
+            adventure. Fight monsters, find treasure, choose and level up your
+            skills and abilities! Adventure with up to 5 players using expansion
+            packs, such as the ones in the Adventure Tier!
+          </li>
+        </ul>
         <div>
-        <h1>{obj.summary}</h1>
+          We've packed a ton of awesome deckbuilding game fun into this box. You
+          are going to love it!
         </div>
-      <div>This Kickstart Features:</div>
+      </div>
       <div className="image"></div>
+      <div>
+        <h1>
+          <b>This Kickstart Features:</b>
+        </h1>
+      </div>
     </div>
   );
 };
