@@ -14,7 +14,7 @@ const obj = {
 const Campaign = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
 
-  setCampaign(obj)
+  setCampaign(obj);
   // setCampaign(obj);
 
   //   useEffect(() => {
@@ -27,7 +27,20 @@ const Campaign = () => {
   //       });
   //   }, []);
 
-  return <div>{campaign}</div>;
+  return (
+    <div>
+      <div>
+        <div>Story</div>
+        <div>The Adventure Begins!</div>
+      </div>
+      <div className="image"></div>
+        <div>
+        <h1>{obj.summary}</h1>
+        </div>
+      <div>This Kickstart Features:</div>
+      <div className="image"></div>
+    </div>
+  );
 };
 
 export default Campaign;
