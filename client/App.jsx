@@ -15,7 +15,7 @@ const App = () => {
 
     useEffect(() => {
         fetch("http://localhost:3000/projects", {
-           mode:"cors",
+        mode:"cors",
        })
        .then((res) => res.json())
        .then(result => {
