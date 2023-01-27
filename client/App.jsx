@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
-// import Faq from './components/Faq'
-// import Campaign from './components/Campaign'
+import Faq from './components/Faq'
+import Campaign from './components/Campaign'
 // import Community from './components/Community'
 // import Updates from './components/Updates'
 // import Comments from './components/Comments'
-import Card from './components/Card'
+import NavBar from './components/NavBar';
 
 
 
@@ -15,7 +15,7 @@ const App = () => {
 
     useEffect(() => {
         fetch("http://localhost:3000/projects", {
-           mode:"cors",
+        mode:"cors",
        })
        .then((res) => res.json())
        .then(result => {
@@ -45,15 +45,13 @@ const App = () => {
 
   return (
     <>
-    <div>Hello World</div>
     <Router>
     <Routes>
-        <Route path='/' exact element={<Card />} />
-        {/* <Route path='/campaign' element={<Campaign />} />
+        <Route path='/' element={<NavBar />} />
         <Route path='/faq' element={<Faq />} />
-        <Route path='/updates' element={<Updates />} />
-        <Route path='/comments' element={<Comments />} />
-        <Route path='/community' element={<Community />} /> */}
+        {/* <Route path='/updates' element={<Updates />} /> */}
+        {/* <Route path='/comments' element={<Comments />} /> */}
+        {/* <Route path='/community' element={<Community />} /> */}
     </Routes>
     </Router>
     </>
