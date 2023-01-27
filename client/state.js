@@ -4,3 +4,8 @@ export const campaignState = atom({
   key: "campaign",
   default: [],
 });
+
+export const commentState = atom({
+  key: "comments",
+  default: [],
+});
