@@ -47,4 +47,3 @@ of the Hero Realms Deckbuilding game. • Co-Founder/Co-Designer of the Ascensio
 COO • EpicTCG CEO • Your Move Games Inc. Co-CEO • Stoneblade Entertainment Organized Play Director • Game Store 
 Owner • Premier Tournament Organizer • Tournament Judge (Level 3 Magic Judge) • Organized Play Designer/Consultant. Rob 
 has founded or co-founded multiple game companies and successfully published dozens of games and gaming accessories.')
-
