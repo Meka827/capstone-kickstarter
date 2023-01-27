@@ -1,0 +1,94 @@
+.accordian{
+    width: 650px;
+}
+
+body {
+    margin: 0;
+    font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282828;
+}
+
+.card-container {
+    display: grid;
+    grid-template-rows: 80px;
+    padding: 10px;
+}
+  
+.card-container > div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.bt-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 80px;
+    gap: 10px;
+    padding: 10px;
+}
+
+.faq-answer, .faq-date {
+    color: black;
+}
+  
+.faq-answer.show {
+    display: block;
+    height: auto;
+    max-height: 9999px;
+    transition: all 0.5 cubic-bezier(0,1,0,1);
+}
+
+.faq-question {
+    color:black;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.item {
+    background: lightgray;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 10px;
+    padding: 10px;
+}
+
+.menu > div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.pledge-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 80px 80px;
+    gap: 10px;
+    padding: 10px;
+}
+  
+.pledge-container > span {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100vh;
+    justify-content: center;
+    align-content: center;
+}
