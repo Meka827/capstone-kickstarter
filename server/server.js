@@ -4,16 +4,10 @@ import postgres from "postgres";
 import cors from "cors";
 // import App from "../client/App";
 
-// const sql = postgres({
-//   database: "kickstarter",
-//   username: "Kmnor",
-//   password: "Camaro67",
-// });
-
 const sql = postgres({
-  database: "kickstarter",
-  user: "Kmnor",
-  password: "Camaro67",
+  database: database.env.DATABASE,
+  user: user.env.USER,
+  password: password.env.PASSWORD,
 });
 
 // const sql = postgres("postgres://localhost/kickstarter");
