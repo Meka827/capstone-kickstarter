@@ -1,4 +1,5 @@
 import React from 'react'
+import NavBar from './NavBar'
 
 const updates = [
     {
@@ -24,17 +25,19 @@ const updates = [
 ]
 
 const Updates = () => {
+    // onClick ={showAllUpdates}
 return (
     <>
+    <NavBar />
         <section className="update-section">
-            <button className ="btn" onClick ={showAllUpdates}>All Updates</button>
+            <button className ="btn" >All Updates</button>
             <p>Update #2</p>
             <h1>Over 30 Promo Cards Unlocked, Art from Watery Graves, and more!</h1>
             <div className="flex">
             {/* <img></img> */}
             <div  className ="name-date">
-            <p>{creator} <span>creator</span></p>
-            <p>{date}</p>
+            {/* <p>{creator} <span>creator</span></p>
+            <p>{date}</p> */}
             </div>
             </div>
         </section>
