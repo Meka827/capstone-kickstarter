@@ -16,7 +16,7 @@ const NavBar = () => {
     return (
         <>
             <Card></Card>
-          <nav className="nav-bar" >
+        <nav className="nav-bar" >
             <div className="menu" >
                 <div  className='menu-item' >
                     <Link className="link" to="/" activestyle="true">
