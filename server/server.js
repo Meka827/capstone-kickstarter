@@ -86,6 +86,14 @@ app.get("/creator/:id", (req, res) => {
   );
 });
 
+//===================================COMMENTS===============================
+app.get("/comments", (req, res) => {
+  sql`SELECT * FROM comments`.then((results) => {
+    res.send(results);
+  });
+  console.log("is working");
+});
+
 //==============ERROR HANDLERS==============================================
 app.use((err, req, res, mext) => {
   console.error(err);
