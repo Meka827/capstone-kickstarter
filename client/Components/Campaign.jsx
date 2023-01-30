@@ -6,35 +6,34 @@ import { useEffect } from "react";
 const Campaign = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
 
+  useEffect(() => {
+    fetch("http://localhost:3000/campaign", {
+      mode: "cors",
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setCampaign(result);
+        console.log(result);
+      });
+  }, []);
+
   return (
     <div>
       <div className="campaign-container">
         <div>Story</div>
         <div>
           <h1>
-            <b>The Adventure Begins!</b>
+            <b>{campaign.title}</b>
           </h1>
-          <div>
-            If you are new to Hero Realms, Dungeons is a fantastic place to
-            start. In this single box you get all the amazing gameplay Hero
-            Realm has to offer!
-          </div>
+          <div>{campaign.summary}</div>
         </div>
       </div>
       <div className="image"></div>
       <div className="feature-bullets">
         <ul>
-          <li>2-4 player PVP with basic decks</li>
-          <li>
-            2 player PVP with the included Alchemist and Barbarian Character
-            packs.{" "}
-          </li>
-          <li>
-            Solo and 2-player cooperative play through a 12-encounter dungeon
-            adventure. Fight monsters, find treasure, choose and level up your
-            skills and abilities! Adventure with up to 5 players using expansion
-            packs, such as the ones in the Adventure Tier!
-          </li>
+          <li>{campaign.bullet_one}</li>
+          <li>{campaign.bullet_two}</li>
+          <li>{campaign.bullet_three}</li>
         </ul>
         <div>
           We've packed a ton of awesome deckbuilding game fun into this box. You
@@ -45,6 +44,9 @@ const Campaign = () => {
       <div>
         <h1>
           <b>This Kickstart Features:</b>
+          <ul>
+            <li> *Several bullets & images here*</li>
+          </ul>
         </h1>
       </div>
     </div>
