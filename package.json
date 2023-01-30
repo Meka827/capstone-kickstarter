@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
+    "dev": "concurrently \"npm:dev:*\"",
     "dev:server": "nodemon server/server.js",
     "dev:client": "vite"
   },

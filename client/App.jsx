@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
 import Faq from './components/Faq'
+import TopNav from './Components/TopNav';
 import Campaign from './components/Campaign'
 // import Community from './components/Community'
 // import Updates from './components/Updates'
@@ -45,6 +46,7 @@ const App = () => {
 
   return (
     <>
+    <TopNav />
     <Router>
     <Routes>
         <Route path='/' element={<NavBar />} />
