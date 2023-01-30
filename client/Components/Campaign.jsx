@@ -2,11 +2,15 @@ import React from "react";
 import { useRecoilState } from "recoil";
 import { campaignState } from "../state";
 import { useEffect } from "react";
+import NavBar from "./NavBar";
 
 const Campaign = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
 
   return (
+    <>
+    {/* <NavBar /> */}
+    <NavBar />
     <div>
       <div className="campaign-container">
         <div>Story</div>
@@ -48,6 +52,7 @@ const Campaign = () => {
         </h1>
       </div>
     </div>
+    </>
   );
 };
 

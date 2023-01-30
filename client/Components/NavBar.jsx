@@ -1,11 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Card from "./Card"
-// import Faq from './Faq'
-import Campaign from './Campaign'
-// import Community from './Community'
-// import Updates from './Updates'
-// import Comments from './Comments'
 
 
 

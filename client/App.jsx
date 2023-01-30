@@ -4,8 +4,8 @@ import { useRecoilState } from "recoil";
 import { commentState } from "/state.js";
 import Faq from './components/Faq'
 import Campaign from './components/Campaign'
-// import Community from './components/Community'
-// import Updates from './components/Updates'
+import Community from './components/Community'
+import Updates from './components/Updates'
 import Comments from './components/Comment'
 import NavBar from './components/NavBar';
 
@@ -62,11 +62,11 @@ const App = () => {
     <>
     <Router>
     <Routes>
-        <Route path='/' element={<NavBar />} />
+        <Route path='/' element={<Campaign />} />
         <Route path='/faq' element={<Faq />} />
-        {/* <Route path='/updates' element={<Updates />} /> */}
+        <Route path='/updates' element={<Updates />} />
         <Route path='/comments' element={<Comments comments={comments} />} />
-        {/* <Route path='/community' element={<Community />} /> */}
+        <Route path='/community' element={<Community />} />
     </Routes>
     </Router>
     </>
