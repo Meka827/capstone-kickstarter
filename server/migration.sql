@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS projects;
 DROP TABLE IF EXISTS campaign;
 DROP TABLE IF EXISTS creator;
+DROP TABLE IF EXISTS comments;
 
 CREATE TABLE projects (
     id SERIAL,
@@ -26,6 +27,50 @@ CREATE TABLE creator (
     summary TEXT
 );
 
+CREATE TABLE comments (
+    id SERIAL,
+    name TEXT, 
+    comment TEXT
+);
+
+INSERT INTO comments (name, comment) VALUES ('Alexandre Savaria', 'Will stretch goal only be single card at each level?
+Kinda cheap');
+
+INSERT INTO comments (name, comment) VALUES ('Zimgief', "Would it be possible to create an add-on (not free) just for the 
+Kickstarter exclusives? As I want to buy the bulk of HR Dungeons in another language, but would like to participate, and 
+to get this sweet necromancer. I know that you will eventually sell them as add-ons on later kickstarters, so why not now? 
+I’m a bit sad to have to wait an unrelated kickstarter and get the game far more later just because I do not have the possibility now. :(
+I’d also like to know if the story will have as much text and story as the Ruin of Thandar Campaign in the Adventure booklet, 
+or have a more dungeon-crawler feel (more focused on gameplay)? Thanks!");
+
+INSERT INTO comments (name, comment) VALUES ('donnbobhardy', "So, the all-in would be $299 for all gameplay, but I would still 
+probably need the dials, dividers, and box, for another $110, for a total of $409? That's... painful. Is there a recommended 
+starting point? I suppose the simple answer is 'just get the $99 pledge and worry about the rest later'?");
+
+INSERT INTO comments (name, comment) VALUES ('Florian Schoch', 'I have the Adventurer Box an am wondering if everything will fit 
+in there :D please enlighten me. Will it fit? And I mean ALL the Hero Realms Cards');
+
+INSERT INTO comments (name, comment) VALUES ('Brad Andrews', 'Is the "all in" really "all"? Too many addon options. I hate it when 
+it is hard to figure out if I am really getting it "all".');
+
+INSERT INTO comments (name, comment) VALUES ('Matt Dyal', "Can this be added to the FAQ: 'We aren't doing packs of cards with 
+just errata. This is because over time I don't want there to be a million different errata packs. That would add to our manufacturing 
+costs, confuse our logistics, bloats our SKU codes, and would be really confusing to new players.'");
+
+INSERT INTO comments (name, comment) VALUES ('Mary Death', 'If I only will buy the Sorcerer add ons and nothing else, when will I recieve
+ those expansions? I hope I don not have to wait untill februari 2024 as this campaign for Hero Realms is saying?');
+
+INSERT INTO comments (name, comment) VALUES ('Nathan P. Butler', 'Question for Rob or Derek regarding updated/errata cards: Can you let
+ us know which products include any updated cards? We know that the Adventure Packs include updated cards from The Ruin of Thandar and 
+ The Lost Village, but are those the only cards being changed, so that those who get the Adventure Packs will have all errata/updated 
+ cards, or are there others spread out elsewhere in the product line?');
+
+INSERT INTO comments (name, comment) VALUES ('George Lin', 'trying to figure out what add-on I am missing for Sorcerer, I backed Sorcerer 
+at New Stuff Tier, and looking at the add on hero realms of this campaign compared to Sorcerer Endbringer, the only add on the shows 
+graphic difference is the Nicodemus Character Pack, not sure about others.. and naming..Anyone know, thanks');
+
+INSERT INTO comments (name, comment) VALUES ('Matt Dyal', 'I am all in on the new content, but it would be nice to have an add-on of just 
+the new character+adventure packs like you have for the originals.');
 
 INSERT INTO projects (title, description, pledge_amount,pledge_goal, backers, goal_date)
 VALUES ('Hero Realms Dungeons', 'A new 80 card market deck, 6 new characters, and an all-new 12-encounter 
