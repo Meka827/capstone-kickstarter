@@ -35,10 +35,7 @@ const Campaign = () => {
           <li>{campaign.bullet_two}</li>
           <li>{campaign.bullet_three}</li>
         </ul>
-        <div>
-          We've packed a ton of awesome deckbuilding game fun into this box. You
-          are going to love it!
-        </div>
+        <div>{campaign.bullet_flavor}</div>
       </div>
       <div className="image"></div>
       <div>
