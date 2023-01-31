@@ -1,45 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { campaignState } from "../state";
-import { useEffect } from "react";
 import NavBar from "./NavBar";
+import { campaignState } from "/state";
 
-const Campaign = () => {
-  const [campaign, setCampaign] = useRecoilState(campaignState);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/campaign", {
-      mode: "cors",
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        setCampaign(result);
-        console.log(result);
-      });
-  }, []);
+const Campaign = (props) => {
+// const [campaign, setCampaign] = useState([]);
 
+
+ 
   return (
     <>
-    {/* <NavBar /> */}
+    {/* {console.log(props.campaign[0].title)} */}
     <NavBar />
     <div>
       <div className="campaign-container">
         <div>Story</div>
         <div>
           <h1>
-            <b>{campaign.title}</b>
+            <b>{props.campaign[0].title}</b>
           </h1>
-          <div>{campaign.summary}</div>
+          <div>{props.campaign[0].summary}</div>
         </div>
-      </div>
+       </div>
       <div className="image"></div>
       <div className="feature-bullets">
         <ul>
-          <li>{campaign.bullet_one}</li>
-          <li>{campaign.bullet_two}</li>
-          <li>{campaign.bullet_three}</li>
+          <li>{props.campaign[0].bullet_one}</li>
+          <li>{props.campaign[0].bullet_two}</li>
+          <li>{props.campaign[0].bullet_three}</li>
         </ul>
-        <div>{campaign.bullet_flavor}</div>
+        <div>{props.campaign[0].bullet_flavor}</div>
       </div>
       <div className="image"></div>
       <div>
