@@ -12,9 +12,12 @@ const project =   {
 
 const Card = () => {
 
-
-
     const { id, title, description, pledge_amount, pledge_goal, backers, goal_date } = project;
+    let currentDate = new Date;
+    let goalDate = new Date(goal_date)
+    let difference = Math.ceil((goalDate.getTime() - currentDate.getTime()) / (1000 * 3600 * 24));
+
+    
 
   return (
     <div>
@@ -33,17 +36,17 @@ const Card = () => {
                 <span className='backers' >
                     {backers}
                 </span>
-                <span className='daystogo' >22</span>
+                <span className='daystogo' >{difference}</span>
                 {/* <span className='goal-date' >
                     {goal_date}
                 </span> */}
                 <span className='pledge-goal' >
                     <span className='money' >
-                        ${pledge_goal}
+                        pledged of ${pledge_goal} goal
                     </span>
                 </span>
                 <span className='backers-text' >
-                    {backers}
+                    backers
                 </span>
                 <span className='daystogo-text' >days to go</span>
             </div>
