@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
+import { useRecoilState } from "recoil";
+import { commentState } from "/state.js";
 import Faq from './components/Faq'
 import TopNav from './Components/TopNav';
 import Campaign from './components/Campaign'
-// import Community from './components/Community'
-// import Updates from './components/Updates'
-// import Comments from './components/Comments'
+import Community from './components/Community'
+import Updates from './components/Updates'
+import Comments from './components/Comment'
 import NavBar from './components/NavBar';
 
 
@@ -44,16 +46,29 @@ const App = () => {
        });
     }, [])
 
+      /*======================================COMMENTS===========================================*/
+  const [comments, setComments] = useRecoilState(commentState);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/comments", {
+      mode: "cors",
+    })
+      .then((res) => res.json())
+      .then((comments) => {
+        setComments(comments);
+      });
+  }, []);
+
   return (
     <>
     <TopNav />
     <Router>
     <Routes>
-        <Route path='/' element={<NavBar />} />
+        <Route path='/' element={<Campaign />} />
         <Route path='/faq' element={<Faq />} />
-        {/* <Route path='/updates' element={<Updates />} /> */}
-        {/* <Route path='/comments' element={<Comments />} /> */}
-        {/* <Route path='/community' element={<Community />} /> */}
+        <Route path='/updates' element={<Updates />} />
+        <Route path='/comments' element={<Comments comments={comments} />} />
+        <Route path='/community' element={<Community />} />
     </Routes>
     </Router>
     </>

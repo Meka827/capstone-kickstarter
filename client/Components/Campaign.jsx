@@ -1,33 +1,58 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { campaignState } from "../state";
-
-const obj = {
-  project_id: 1,
-  creator_id: 1,
-  title: "Hero Realms Dungeons",
-  image: "images/hero-realms.png",
-  summary:
-    "A new 80 card market deck, 6 new characters, and an all-new 12-encounter \ndungeon campaign for 1-5 players!",
-};
+import { useEffect } from "react";
+import NavBar from "./NavBar";
 
 const Campaign = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
 
-  setCampaign(obj)
-  // setCampaign(obj);
+  useEffect(() => {
+    fetch("http://localhost:3000/campaign", {
+      mode: "cors",
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setCampaign(result);
+        console.log(result);
+      });
+  }, []);
 
-  //   useEffect(() => {
-  //     fetch(`http://localhost:3000/campaign/${id}`, {
-  //       mode: "cors",
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setCampaign(data);
-  //       });
-  //   }, []);
-
-  return <div>{campaign}</div>;
+  return (
+    <>
+    {/* <NavBar /> */}
+    <NavBar />
+    <div>
+      <div className="campaign-container">
+        <div>Story</div>
+        <div>
+          <h1>
+            <b>{campaign.title}</b>
+          </h1>
+          <div>{campaign.summary}</div>
+        </div>
+      </div>
+      <div className="image"></div>
+      <div className="feature-bullets">
+        <ul>
+          <li>{campaign.bullet_one}</li>
+          <li>{campaign.bullet_two}</li>
+          <li>{campaign.bullet_three}</li>
+        </ul>
+        <div>{campaign.bullet_flavor}</div>
+      </div>
+      <div className="image"></div>
+      <div>
+        <h1>
+          <b>This Kickstart Features:</b>
+          <ul>
+            <li> *Several bullets & images here*</li>
+          </ul>
+        </h1>
+      </div>
+    </div>
+    </>
+  );
 };
 
 export default Campaign;

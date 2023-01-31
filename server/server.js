@@ -3,14 +3,14 @@ import postgres from "postgres";
 import nodemon from "nodemon";
 import cors from "cors";
 
-// const sql = postgres({
-//   database: "kickstarter",
-//   username: "postgres",
-//   password: "password",
-// });
+const sql = postgres({
+  database: "kickstarter",
+  username: "postgres",
+  password: "password",
+});
 
 
-const sql = postgres("postgres://localhost/kickstarter");
+// const sql = postgres("postgres://localhost/kickstarter");
 const app = express();
 
 //=============Middleware=======================================
@@ -84,6 +84,14 @@ app.get("/creator/:id", (req, res) => {
       }
     }
   );
+});
+
+//===================================COMMENTS===============================
+app.get("/comments", (req, res) => {
+  sql`SELECT * FROM comments`.then((results) => {
+    res.send(results);
+  });
+  console.log("is working");
 });
 
 //==============ERROR HANDLERS==============================================

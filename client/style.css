@@ -1,3 +1,15 @@
+/* :root{
+    --accent-color:#02885b;
+    --text-color:#363535;
+    --main-font:'Lato', sans-serif;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box; 
+} */
+
 .accordian{
     width: 650px;
 }
@@ -69,6 +81,17 @@ body {
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
+}
+
+.new-comment-btn {
+    background-color: #5555ff;
+    color: white;
+    --bttn-icon: white;
+    border: #5555ff;
+    --bttn-hover-bg: #0a007d;
+    --bttn-hover-text: white;
+    --bttn-hover-icon: white;
+    --bttn-hover-border: #0a007d;
 }
 
 .pledge-container {
