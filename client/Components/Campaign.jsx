@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useRecoilState } from "recoil";
+import React from "react";
 import NavBar from "./NavBar";
-import { campaignState } from "/state";
 
 
 const Campaign = (props) => {
-// const [campaign, setCampaign] = useState([]);
 
 
  
   return (
     <>
-    {/* {console.log(props.campaign[0].title)} */}
     <NavBar />
     <div>
       <div className="campaign-container">

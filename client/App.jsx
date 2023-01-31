@@ -8,15 +8,12 @@ import Campaign from './components/Campaign'
 import Community from './components/Community'
 import Updates from './components/Updates'
 import Comments from './components/Comment'
-import NavBar from './components/NavBar';
 
 
 
 
 const App = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
-
-// console.log(new Date)
 
     useEffect(() => {
         fetch("http://localhost:3000/projects", {
