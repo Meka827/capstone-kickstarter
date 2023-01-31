@@ -1,20 +1,25 @@
-/* :root{
+ :root{
     --accent-color:#02885b;
     --text-color:#363535;
     --main-font:'Lato', sans-serif;
+    --background-color:#edeceb;
+    --update-card-background:#fdfdfd;
+    --span-color:#04ce7a;
+    --accent-text-color:#bcbcbc;
 }
 
 *{
     margin:0;
     padding:0;
     box-sizing: border-box; 
-} */
+} 
 
 .accordian{
     width: 650px;
 }
 
 body {
+    font-size:100%;
     margin: 0;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #282828;
@@ -101,7 +106,7 @@ body {
     gap: 10px;
     padding: 10px;
 }
-  
+
 .pledge-container > span {
     text-align: center;
     padding: 20px 0;
@@ -115,3 +120,6 @@ body {
     justify-content: center;
     align-content: center;
 }
+
+
+/* COPY THIS CODE */
