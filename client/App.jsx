@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
 import { useRecoilState } from "recoil";
 import { commentState } from "/state.js";
+import { campaignState } from "/state";
 import Faq from './components/Faq'
 import TopNav from './Components/TopNav';
 import Campaign from './components/Campaign'
 import Community from './components/Community'
 import Updates from './components/Updates'
 import Comments from './components/Comment'
-import NavBar from './components/NavBar';
 
 
 
 
 const App = () => {
-
+  const [campaign, setCampaign] = useRecoilState(campaignState);
 
     useEffect(() => {
         fetch("http://localhost:3000/projects", {
@@ -22,7 +22,6 @@ const App = () => {
        })
        .then((res) => res.json())
        .then(result => {
-        console.log(result);
        });
     }, [])
 
@@ -31,8 +30,8 @@ const App = () => {
            mode:"cors",
        })
        .then((res) => res.json())
-       .then(result => {
-        console.log(result);
+       .then((result) => {
+        setCampaign(result);
        });
     }, []) 
     
@@ -42,7 +41,6 @@ const App = () => {
        })
        .then((res) => res.json())
        .then(result => {
-        console.log(result);
        });
     }, [])
 
@@ -64,7 +62,7 @@ const App = () => {
     <TopNav />
     <Router>
     <Routes>
-        <Route path='/' element={<Campaign />} />
+        <Route path='/' element={campaign.length !== 0 && <Campaign campaign={campaign} />} />
         <Route path='/faq' element={<Faq />} />
         <Route path='/updates' element={<Updates />} />
         <Route path='/comments' element={<Comments comments={comments} />} />

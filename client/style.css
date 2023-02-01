@@ -1,23 +1,44 @@
-/* :root{
+ :root{
     --accent-color:#02885b;
     --text-color:#363535;
     --main-font:'Lato', sans-serif;
+    --background-color:#edeceb;
+    --update-card-background:#fdfdfd;
+    --span-color:#04ce7a;
+    --accent-text-color:#bcbcbc;
 }
 
 *{
     margin:0;
     padding:0;
     box-sizing: border-box; 
-} */
+} 
 
 .accordian{
     width: 650px;
 }
 
 body {
+    font-size:100%;
     margin: 0;
     font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #282828;
+}
+
+.bt-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 80px;
+    gap: 10px;
+    padding: 10px;
+}
+
+.btn{
+    background-color:#fff;
+    padding:10px 30px;
+    border:1px solid lightgrey;
+    margin-bottom:30px;
+    cursor:pointer;
 }
 
 .card-container {
@@ -32,12 +53,35 @@ body {
     font-size: 30px;
 }
 
-.bt-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 80px;
-    gap: 10px;
-    padding: 10px;
+.card-footer{
+    position:relative;
+    z-index:999;
+    box-shadow:-3px -3px 90px 90px  #fff;
+    overflow-x:hidden;
+    margin-top:30px;
+}
+
+.comments-likes{
+    display:flex;
+    flex-direction:row;
+    color:var(--accent-text-color);
+    font-size:1rem;
+    position:relative;
+    z-index:1000;
+    gap:20px;
+}
+
+.creator span{
+    background-color:var(--span-color);
+    font-size:0.8rem;
+    color:white;
+    border-radius:2px;
+    padding:2px 5px;
+}
+
+.date{
+    color:var(--accent-text-color);
+    font-size:0.8rem;
 }
 
 .faq-answer, .faq-date {
@@ -58,6 +102,10 @@ body {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
+}
+
+.greeting{
+    margin:20px 0;
 }
 
 .hide {
@@ -83,6 +131,11 @@ body {
     font-size: 30px;
 }
 
+.name-date{
+    border-bottom: 1px solid lightgrey;
+    padding-bottom:10px;
+}
+
 .new-comment-btn {
     background-color: #5555ff;
     color: white;
@@ -101,7 +154,7 @@ body {
     gap: 10px;
     padding: 10px;
 }
-  
+
 .pledge-container > span {
     text-align: center;
     padding: 20px 0;
@@ -114,4 +167,38 @@ body {
     width: 100vh;
     justify-content: center;
     align-content: center;
+}
+
+.summary{
+    margin-bottom:10px;
+}
+
+.update-container{
+    margin:0 auto;
+    padding:30px;
+    max-width:816px;
+}
+
+.update-section{
+    background-color:#e8e6e1;
+}
+
+.update-card{
+    background:var(--update-card-background);
+    border:1px solid lightgrey;
+    padding:40px;
+    margin-bottom:2rem;
+}
+
+.update-number{
+    margin:10px 0;
+    color:var(--accent-text-color);
+    text-transform:uppercase;
+    font-size:0.8rem;
+}
+
+.update-flex{
+    display:flex;
+    justify-content: space-between;
+    
 }
