@@ -61,7 +61,7 @@ const App = () => {
     <>
     <Router>
     <Routes>
-        <Route path='/campaign' element={campaign.length !== 0 && creator.length !== 0 && <Campaign campaign={campaign} creator={creator} />} />
+        <Route path='/' element={campaign.length !== 0 && creator.length !== 0 && <Campaign campaign={campaign} creator={creator} />} />
         <Route path='/faq' element={<Faq />} />
         <Route path='/updates' element={<Updates />} />
         <Route path='/comments' element={<Comments comments={comments} />} />
