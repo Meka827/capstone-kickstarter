@@ -13,7 +13,7 @@ const Campaign = (props) => {
             <b>{props.creator[0].name}</b>
           </div>
           <div>
-            {props.creator[0].created} - {props.creator[0].backed}
+            {props.creator[0].created} created - {props.creator[0].backed} backed
           </div>
           <br></br>
           <div>{props.creator[0].bio}</div>
@@ -51,7 +51,7 @@ const Campaign = (props) => {
         </div>
         <div>
           <h1> Risks and Challenges </h1>
-          <body>
+          <div>
             This is the first time we are doing extensive digital playtesting of
             a physical game before we go to print. I am VERY excited about how
             this will improve the quality of the final product, but I can't say
@@ -66,7 +66,7 @@ const Campaign = (props) => {
             inspection for extended periods and other logistic issues. EU
             backers should know such issues may cause your delivery to be
             delayed.
-          </body>
+          </div>
           <h2> Refund Policy </h2>
           <div>
             Within 60 days of the end of this Kickstarter we offer refunds (no
