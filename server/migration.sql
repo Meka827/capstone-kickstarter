@@ -28,7 +28,10 @@ CREATE TABLE campaign (
 CREATE TABLE creator (
     id SERIAL,
     name TEXT,
-    summary TEXT
+    bio TEXT,
+    created INT,
+    backed INT,
+    hometown TEXT
 );
 
 CREATE TABLE comments (
@@ -82,7 +85,7 @@ dungeon campaign for 1-5 players!', 371523, 20000, 2479, '2023-02-16 09:00:00');
 
 INSERT INTO campaign (project_id, creator_id, title, image, summary, bullet_one, bullet_two, bullet_three, bullet_flavor) VALUES (1, 1, 'The Adventure Begins!', 'images/hero-realms.png', 'If you are new to Hero Realms, Dungeons is a fantastic place to start. In this single box you get all the amazing gameplay Hero Realm has to offer!', '2-4 player PVP with basic decks', '2 player PVP with the included Alchemist and Barbarian Character packs.', 'Solo and 2-player cooperative play through a 12-encounter dungeon adventure. Fight monsters, find treasure, choose and level up your skills and abilities! Adventure with up to 5 players using expansion packs, such as the ones in the Adventure Tier!', 'We have packed a ton of awesome deckbuilding game fun into this box. You are going to love it!'); 
 
-INSERT INTO creator (name, summary) VALUES ('Robert Dougherty', 'Rob Dougherty grew up in upstate NY. He joined the 
+INSERT INTO creator (name, bio, created, backed, hometown) VALUES ('Robert Dougherty', 'Rob Dougherty grew up in upstate NY. He joined the 
 US Army at age 17, completed Airborne training, and served with the 1st infantry division. He then attended Northeastern 
 University studying electrical engineering. In 1994 Rob dropped out of college to pursue his life long passion: games. He 
 opened the iconic Your Move Games stores, and led the store''s legendary professional team which created a slew of Hall of 
@@ -93,4 +96,4 @@ Games CEO • Designer and Co-Creator of Epic Card Game. • Co-Creator of the S
 of the Hero Realms Deckbuilding game. • Co-Founder/Co-Designer of the Ascension Deckbuilding Game. • Gary Games Inc. 
 COO • EpicTCG CEO • Your Move Games Inc. Co-CEO • Stoneblade Entertainment Organized Play Director • Game Store 
 Owner • Premier Tournament Organizer • Tournament Judge (Level 3 Magic Judge) • Organized Play Designer/Consultant. Rob 
-has founded or co-founded multiple game companies and successfully published dozens of games and gaming accessories.')
+has founded or co-founded multiple game companies and successfully published dozens of games and gaming accessories.', 15, 91, 'Sudbury, MA')
