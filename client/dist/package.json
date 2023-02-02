@@ -5,7 +5,7 @@
   "main": "state.js",
   "scripts": {
     "dev": "vite serve",
-    "build": "vite"
+    "build": "vite build"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
