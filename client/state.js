@@ -9,3 +9,11 @@ export const commentState = atom({
   key: "comments",
   default: [],
 });
+
+export const creatorState = atom({
+  key: "creator",
+  default: [],
+});
+
+
+

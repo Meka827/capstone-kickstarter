@@ -2,8 +2,8 @@
     --accent-color:#02885b;
     --text-color:#363535;
     --main-font:'Lato', sans-serif;
-    --background-color:#edeceb;
-    --update-card-background:#fdfdfd;
+    --background-color:#fbfbfa;
+    --update-card-background:#fefefe;
     --span-color:#04ce7a;
     --accent-text-color:#bcbcbc;
 }
@@ -41,12 +41,18 @@ body {
     cursor:pointer;
 }
 
+.btn:hover{
+border:1px solid #000;
+box-shadow:1px 1px 4px 1px lightgrey;
+}
+
 .card-container {
     display: grid;
     grid-template-rows: 80px;
     padding: 10px;
 }
-  
+
+
 .card-container > div {
     text-align: center;
     padding: 20px 0;
@@ -179,8 +185,13 @@ body {
     max-width:816px;
 }
 
+.update-card:hover{
+    border:1px solid #000;
+    transition:0.8s ease-in-out
+}
+
 .update-section{
-    background-color:#e8e6e1;
+    background-color:var(--background-color);
 }
 
 .update-card{
@@ -188,6 +199,11 @@ body {
     border:1px solid lightgrey;
     padding:40px;
     margin-bottom:2rem;
+    overflow:hidden;
+}
+
+.update-card:hover{
+    border:1px solid #000;
 }
 
 .update-number{
@@ -201,4 +217,23 @@ body {
     display:flex;
     justify-content: space-between;
     
+}
+
+
+.community{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:50vh;
+    border-bottom:1px solid lightgrey;
+}
+
+.community-supporters{
+    font-size: 1.4rem;;
+}
+
+.community-headings{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
 }
