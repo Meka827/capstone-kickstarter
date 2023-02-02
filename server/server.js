@@ -10,8 +10,8 @@ import dotenv from "dotenv";
 //   password: "password",
 // });
 
-dotenv.config({path: "../.env"});
-
+dotenv.config();
+// {path: "../.env"}
 const sql = postgres(process.env.DATABASE_URL);
 const app = express();
 
