@@ -3,14 +3,14 @@ import postgres from "postgres";
 import nodemon from "nodemon";
 import cors from "cors";
 
-// const sql = postgres({
-//   database: "kickstarter",
-//   username: "postgres",
-//   password: "password",
-// });
+const sql = postgres({
+  database: "kickstarter",
+  username: "postgres",
+  password: "password",
+});
 
 
-const sql = postgres("postgres://localhost/kickstarter");
+// const sql = postgres("postgres://localhost/kickstarter");
 const app = express();
 
 //=============Middleware=======================================
@@ -49,6 +49,14 @@ app.get("/campaign", (req, res) => {
   console.log("is working");
 });
 
+app.get("/pledge", (req, res) => {
+  sql`SELECT * FROM pledge`.then((results) => {
+    res.send(results);
+  });
+  console.log("is working");
+});
+
+
 app.get("/campaign/:id", (req, res) => {
   const id = req.params.id;
   sql`SELECT * FROM campaign WHERE project_id = ${id}`.then((results) => {
@@ -61,6 +69,8 @@ app.get("/campaign/:id", (req, res) => {
     }
   });
 });
+
+
 
 //============== creator Routes====================================
 

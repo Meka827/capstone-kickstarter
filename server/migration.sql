@@ -25,6 +25,15 @@ CREATE TABLE campaign (
     bullet_flavor TEXT
 );
 
+CREATE TABLE pledge (
+    id SERIAL,
+    tier_1 TEXT,
+    tier_1_req TEXT,
+    tier_2 TEXT,
+    tier_1_req TEXT,
+    tier_3 TEXT,
+    tier_3_req TEXT
+)
 CREATE TABLE creator (
     id SERIAL,
     name TEXT,
@@ -99,3 +108,21 @@ of the Hero Realms Deckbuilding game. - Co-Founder/Co-Designer of the Ascension 
 COO - EpicTCG CEO - Your Move Games Inc. Co-CEO - Stoneblade Entertainment Organized Play Director - Game Store 
 Owner - Premier Tournament Organizer - Tournament Judge (Level 3 Magic Judge) - Organized Play Designer/Consultant. Rob 
 has founded or co-founded multiple game companies and successfully published dozens of games and gaming accessories.', 15, 91, 'Sudbury, MA')
+
+
+
+INSERT INTO pledge (tier_1, tier_1_req, tier_2, tier_1_req, tier_3, tier_3_req) VALUES ('Not sure what tier to get, or you only want add-ons? Back at this 
+level and you will be in the pledge manager with a $30 credit that can be used toward add-ons and/or whatever tier you want (and shipping of course). You 
+dont need to choose add-ons now.Shipping (and VAT or sales taxes where applicable) will be charged after the campaign ends via the Pledge Manager.', 'Pledge 
+US$ 30 or more', 'You Get the 300-card Hero Realms Dungeons Box Set and all the Stretch Goals!
+Play 2 player PVP with or without characters! Level up the Alchemist and Barbarian from level 1 to 24! Play multiplayer with the four included standard decks 
+or even a 6 player Emperor game with one team led by the Alchemist and the other by the Barbarian. Play the 12 part dungeon adventure, leveling up as you go. 
+Fight monsters, gain experience, learn new skills, abilities, and find fantastic treasures!
+This complete 1-6 player game includes: A beautiful double-sided game board, 3 score dials, An all-new 80 card market deck, 4 standard starting decks, the 
+Alchemist Character Pack, the Alchemist Adventure Deck, the Barbarian Character Pack, the Barbarian Adventure Deck, and a 12 encounter solo or cooperative 
+campaign full of deadly Masters and minions to battle against!
+Shipping (and VAT or sales taxes where applicable) will be charged after the campaign ends via the Pledge Manager.', 'Pledge $59 or more', 'If you want Dungeons
+ AND all the new characters, get this tier! Save $27!
+Youll get the all-new 80 card market deck, the beautiful double-sided game board, 4 score dials, the 12 part dungeon adventure, all 6 new characters with their
+ Adventure Deck gear (including the Kickstarter Exclusive Necromancer) and of course youll get all the unlocked Stretch Goals!
+Shipping (and VAT or sales taxes where applicable) will be charged after the campaign ends via the Pledge Manager.', 'Pledge $99 or more')
