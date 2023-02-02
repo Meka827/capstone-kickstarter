@@ -2,7 +2,7 @@
     --accent-color:#02885b;
     --text-color:#363535;
     --main-font:'Lato', sans-serif;
-    --background-color:#edeceb;
+    --background-color:#fbfbfa;
     --update-card-background:#fdfdfd;
     --span-color:#04ce7a;
     --accent-text-color:#bcbcbc;
@@ -302,18 +302,25 @@ box-shadow:1px 1px 4px 1px lightgrey;
 }
 
 .update-container {
-  margin: 0 auto;
-  padding: 30px;
-  max-width: 816px;
+margin: 0 auto;
+padding: 30px;
+max-width: 816px;
 }
 
 .update-card:hover{
     border:1px solid #000;
-    transition:0.8s ease-in-out
+    transition:0.8s ease-in-out;
+    overflow:hidden;
 }
 
 .update-section{
-    background-color:#e8e6e1;
+    background-color:var(--background-color);
+}
+
+.p1:hover{
+    padding-bottom:30px;
+    transition:0.2s ease-in-out;
+    cursor:pointer;
 }
 
 .update-card{
@@ -321,6 +328,7 @@ box-shadow:1px 1px 4px 1px lightgrey;
     border:1px solid lightgrey;
     padding:40px;
     margin-bottom:2rem;
+    overflow:hidden;
 }
 
 .update-number {
