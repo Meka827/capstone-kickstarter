@@ -8,9 +8,13 @@ return (
 <NavBar />
     <div>
         <section className="community">
-        <div>2,908 people are supporting Robert Dougherty</div>
+        <div className = "community-supporters">2,908 people are supporting Robert Dougherty</div>
         </section>
-    </div>
+        <div className="community-headings container">
+            <p>Where Backers Come From Top Cities</p>
+            <p>Where Backers Come From Top Countries</p>
+        </div>  
+        </div>
     </>
     );
 }
