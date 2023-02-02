@@ -17,7 +17,7 @@ const App = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
 
     useEffect(() => {
-        fetch("http://localhost:3000/projects", {
+        fetch("/projects", {
         mode:"cors",
        })
        .then((res) => res.json())
@@ -26,7 +26,7 @@ const App = () => {
     }, [])
 
     useEffect(() => {
-        fetch("http://localhost:3000/campaign", {
+        fetch("/campaign", {
            mode:"cors",
        })
        .then((res) => res.json())
@@ -36,7 +36,7 @@ const App = () => {
     }, []) 
     
     useEffect(() => {
-        fetch("http://localhost:3000/creator", {
+        fetch("/creator", {
            mode:"cors",
        })
        .then((res) => res.json())
@@ -48,7 +48,7 @@ const App = () => {
   const [comments, setComments] = useRecoilState(commentState);
 
   useEffect(() => {
-    fetch("http://localhost:3000/comments", {
+    fetch("/comments", {
       mode: "cors",
     })
       .then((res) => res.json())

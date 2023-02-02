@@ -2,6 +2,7 @@ import express from "express";
 import postgres from "postgres";
 import nodemon from "nodemon";
 import cors from "cors";
+import dotenv from "dotenv";
 
 // const sql = postgres({
 //   database: "kickstarter",
@@ -9,8 +10,9 @@ import cors from "cors";
 //   password: "password",
 // });
 
+dotenv.config({path: "../.env"});
 
-const sql = postgres("postgres://localhost/kickstarter");
+const sql = postgres(process.env.DATABASE_URL);
 const app = express();
 
 //=============Middleware=======================================
@@ -20,14 +22,14 @@ app.use(cors());
 
 //==============Routes====================================
 
-app.get("/projects", (req, res) => {
+app.get("/api/projects", (req, res) => {
   sql`SELECT * FROM projects`.then((results) => {
     res.send(results);
   });
   console.log("is working");
 });
 
-app.get("/projects/:id", (req, res) => {
+app.get("/api/projects/:id", (req, res) => {
   const id = req.params.id;
   sql`SELECT * FROM projects WHERE id = ${id}`.then((results) => {
     if (results.length !== 0) {
@@ -42,14 +44,14 @@ app.get("/projects/:id", (req, res) => {
 
 //==============campaign Routes====================================
 
-app.get("/campaign", (req, res) => {
+app.get("/api/campaign", (req, res) => {
   sql`SELECT * FROM campaign`.then((results) => {
     res.send(results);
   });
   console.log("is working");
 });
 
-app.get("/campaign/:id", (req, res) => {
+app.get("/api/campaign/:id", (req, res) => {
   const id = req.params.id;
   sql`SELECT * FROM campaign WHERE project_id = ${id}`.then((results) => {
     if (results.length !== 0) {
@@ -64,14 +66,14 @@ app.get("/campaign/:id", (req, res) => {
 
 //============== creator Routes====================================
 
-app.get("/creator", (req, res) => {
+app.get("/api/creator", (req, res) => {
   sql`SELECT * FROM creator`.then((results) => {
     res.send(results);
   });
   console.log("is working");
 });
 
-app.get("/creator/:id", (req, res) => {
+app.get("/api/creator/:id", (req, res) => {
   const { project_id } = req.params;
   sql`SELECT * FROM creator WHERE project_id = ${project_id}`.then(
     (results) => {
@@ -87,7 +89,7 @@ app.get("/creator/:id", (req, res) => {
 });
 
 //===================================COMMENTS===============================
-app.get("/comments", (req, res) => {
+app.get("/api/comments", (req, res) => {
   sql`SELECT * FROM comments`.then((results) => {
     res.send(results);
   });
