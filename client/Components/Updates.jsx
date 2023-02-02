@@ -1,6 +1,8 @@
 import React from 'react';
 import NavBar from './NavBar';
 import { useState } from 'react';
+import Update from './Update';
+import { joinPaths } from '@remix-run/router';
 
 
 
@@ -32,7 +34,7 @@ const Updates = () => {
     }])
 
     const showAllUpdates = () =>{
-        console.log("Clicked Worked");
+        console.log(updates);
     }
 
 return (
@@ -41,35 +43,9 @@ return (
         <section className="update-section">
         <div className ="update-container">
         <button className="btn" onClick={showAllUpdates}>All Updates</button>
-        {
-            updates.map((update) => (
-            <>
-            <div className ="update-card">
-            <p className = "update-number">{update.update_number}</p>
-            <h1 className = "summary">{update.summary}</h1>
-            <div className="flex">
-                    <div className="name-date">
-                        <p className = "creator">{update.creator} <span>Creator</span></p>
-                        <p className = "date">{update.date}</p>
-                    </div>
-                    <p className="greeting">{update.greeting}</p>
-                    <p>{update.paragraph}</p>
-                    {/* <img></img> */}
-                    <p>{update.paragraph_2}</p>
-                    <footer className ="card-footer">
-                            <div className ="update-flex">
-                            <div className ="comments-likes">
-                                <div className ="comments">{update.comments}</div>
-                                <div className ="likes">{update.likes}</div>
-                            </div>
-                            <button className ="btn">Read More</button>
-                            </div>
-                    </footer>
-                </div>
-                </div>
-                </>
-            ))
-        }
+    {updates.map((update) => 
+        <Update key={update.id} update={update} />
+    )}
         </div>
         </section>
     </>

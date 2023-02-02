@@ -4,15 +4,20 @@ import nodemon from "nodemon";
 import cors from "cors";
 import dotenv from "dotenv";
 
-// const sql = postgres({
-//   database: "kickstarter",
-//   username: "postgres",
-//   password: "password",
-// });
+const sql = postgres({
+  database: "kickstarter",
+  username: "postgres",
+  password: "password",
+});
 
+<<<<<<< HEAD
 dotenv.config();
 // {path: "../.env"}
 const sql = postgres(process.env.DATABASE_URL);
+=======
+
+// const sql = postgres("postgres://localhost/kickstarter");
+>>>>>>> ed17892de678b3dbbd1bd23edeb5b3343b69ca87
 const app = express();
 
 //=============Middleware=======================================
@@ -51,7 +56,19 @@ app.get("/api/campaign", (req, res) => {
   console.log("is working");
 });
 
+<<<<<<< HEAD
 app.get("/api/campaign/:id", (req, res) => {
+=======
+app.get("/pledge", (req, res) => {
+  sql`SELECT * FROM pledge`.then((results) => {
+    res.send(results);
+  });
+  console.log("is working");
+});
+
+
+app.get("/campaign/:id", (req, res) => {
+>>>>>>> ed17892de678b3dbbd1bd23edeb5b3343b69ca87
   const id = req.params.id;
   sql`SELECT * FROM campaign WHERE project_id = ${id}`.then((results) => {
     if (results.length !== 0) {
@@ -63,6 +80,8 @@ app.get("/api/campaign/:id", (req, res) => {
     }
   });
 });
+
+
 
 //============== creator Routes====================================
 
