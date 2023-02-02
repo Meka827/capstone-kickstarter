@@ -1,16 +1,27 @@
 import React from 'react';
 
+const Support = ({pledge}) => {
+    const shippingInfo = 'Shipping (and VAT or sales taxes where applicable) will be charged after the campaign ends via the Pledge Manager.';
 
+    const includes = pledge.includes.split(' * ');
+    const includeArray = [];
+    let id = 1
+    for(let bullet of includes) {
+        if (bullet !== ''){
+        includeArray.push({
+            id: id,
+            string: bullet
+        })
+        id += 1;
+    }
+    }
+    
+    const includeList = includeArray.map(bullet => <li key={bullet.id} >{bullet.string}</li>)
 
-
-// &#x2022;
-
-const Support = ({obj}) => {
-    const shippingInfo = 'Shipping (and VAT or sales taxes where applicable) will be charged after the campaign ends via the Pledge Manager.'
 
   return (
     <>
-        <li className='pledge_hover_group' >
+        <div className='pledge_hover_group' >
             <div className='pledge_hover' >
                 <div className='pledge_hover_content' >
                     <p>Select this reward</p>
@@ -18,11 +29,15 @@ const Support = ({obj}) => {
             </div>
             <div className='pledge_info' >
                 <h2 className='pledge_amount' >
-                    Pledge US$ {obj.amount} or more
+                    Pledge $ {pledge.amount} or more
                 </h2>
-                <h3 className='pledge_title' >{obj.title}</h3>
+                <h3 className='pledge_title' >{pledge.title}</h3>
                 <div className='pledge_reward_description' >
-                    <p>{obj.decription}</p>
+                    <p>{pledge.description}</p>
+                    <div>INCLUDES:</div>
+                    <ul>
+                        {includeList}
+                    </ul>
                     <p>{shippingInfo}</p>
                     <a className='pledge_description_toggle' role='button' href="#">
                         <span className='toggle_less'>Less</span>
@@ -55,7 +70,7 @@ const Support = ({obj}) => {
                             <label htmlFor=""></label>
                             <div>
                                 <div>$</div>
-                                <input type="text" defaultValue={obj.amount} />
+                                <input type="text" defaultValue={pledge.amount} />
                             </div>
                         </div>
                         <div>
@@ -64,7 +79,7 @@ const Support = ({obj}) => {
                     </form>
                 </div>
             </div>
-        </li>
+        </div>
     </>
   );
 }

@@ -15,5 +15,7 @@ export const creatorState = atom({
   default: [],
 });
 
-
-
+export const pledgeState = atom({
+  key: "pledge",
+  default: [],
+});
