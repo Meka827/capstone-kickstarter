@@ -3,6 +3,7 @@ import React from 'react';
 const Update = ({ update }) => {
   return (
 <>
+<section className="update-section">
             <div className ="update-card">
             <p className = "update-number">{update.update_number}</p>
             <h1 className = "summary">{update.summary}</h1>
@@ -12,7 +13,7 @@ const Update = ({ update }) => {
                         <p className = "date">{update.date}</p>
                     </div>
                     <p className="greeting">{update.greeting}</p>
-                    <p>{update.paragraph}</p>
+                    <p className="p1">{update.paragraph}</p>
                     {/* <img></img> */}
                     <p>{update.paragraph_2}</p>
                     <footer className ="card-footer">
@@ -26,6 +27,7 @@ const Update = ({ update }) => {
                     </footer>
                 </div>
                 </div>
+                </section>
                 
 </>
   );
