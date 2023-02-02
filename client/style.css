@@ -14,8 +14,12 @@
     box-sizing: border-box; 
 } 
 
-.accordian{
+.accordian {
     width: 650px;
+}
+
+#big-box {
+padding: 50px;
 }
 
 body {
@@ -39,6 +43,25 @@ body {
     border:1px solid lightgrey;
     margin-bottom:30px;
     cursor:pointer;
+}
+
+.story-container { grid-area: story; }
+.creator-container { grid-area: creator; }
+.support-container { grid-area: support; }
+
+.campaign-container {
+    display: grid;
+    grid-template-columns: 68% 20%;
+    grid-template-areas:
+    'story creator'
+    'story support';
+    gap: 10px;
+    padding: 10px;
+}
+
+.campaign-container > div {
+    text-align: center;
+    padding: 20px 0;
 }
 
 .card-container {
