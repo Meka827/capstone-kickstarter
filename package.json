@@ -1,8 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "start": "node server/server.js",
     "dev": "concurrently \"npm:dev:*\"",
+    "start": "node server/server.js",
     "dev:server": "nodemon server/server.js",
     "dev:client": "vite"
   },
