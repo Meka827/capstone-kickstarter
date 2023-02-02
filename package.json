@@ -4,8 +4,7 @@
     "start": "node server/server.js",
     "dev": "concurrently \"npm:dev:*\"",
     "dev:server": "nodemon server/server.js",
-    "dev:client": "vite",
-    "build": "vite build"
+    "dev:client": "vite"
   },
   "dependencies": {
     "concurrently": "^7.6.0",
