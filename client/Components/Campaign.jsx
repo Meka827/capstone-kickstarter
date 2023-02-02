@@ -1,23 +1,27 @@
 import React from "react";
 import NavBar from "./NavBar";
+import Support from "./Support";
+
+const obj = [
+{
+  id: 1,
+  subTitle: "Pledge US$ 30 or more",
+  title: "Pledge Manager Tier",
+  decription: "Not sure what tier to get, or you only want add-ons? Back at this level and you will be in the pledge manager with a $30 credit that can be used toward add-ons and/or whatever tier you want (and shipping of course). You don't need to choose add-ons now.",
+  includes: "",
+  amount: 30
+}
+]
 
 const Campaign = (props) => {
   return (
     <>
       <NavBar />
+      <div className="campaign-container" >
       <div id="big-box">
         {/* creator bio below*/}
         {/* =================================================================*/}
-        <div className="creator-container">
-          <div>
-            <b>{props.creator[0].name}</b>
-          </div>
-          <div>
-            {props.creator[0].created} created - {props.creator[0].backed} backed
-          </div>
-          <br></br>
-          <div>{props.creator[0].bio}</div>
-        </div>
+
         {/* story and explanation of kickstarter container below */}
         {/* =================================================================*/}
         <div>
@@ -78,6 +82,20 @@ const Campaign = (props) => {
             processed using the method of our choosing (usually PayPal).
           </div>
         </div>
+      </div>
+      <div className="creator-container">
+          <div>
+            <b>{props.creator[0].name}</b>
+          </div>
+          <div>
+            {props.creator[0].created} created - {props.creator[0].backed} backed
+          </div>
+          <br></br>
+          <div>{props.creator[0].bio}</div>
+        </div>
+      <div className="support-container" >
+        {obj.map((obj => <Support key={obj.id} obj={obj} />))}
+      </div>
       </div>
     </>
   );
