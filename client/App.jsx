@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
 import { useRecoilState } from "recoil";
-import { campaignState, commentState, creatorState} from "./state";
+import { campaignState, commentState, creatorState, pledgeState } from "./state";
 import Faq from './components/Faq';
 import Campaign from './components/Campaign';
 import Community from './components/Community';
@@ -13,7 +13,9 @@ import Comments from './components/Comment';
 
 const App = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
-  const [creator, setCreator] = useRecoilState(creatorState)
+  const [creator, setCreator] = useRecoilState(creatorState);
+  const [pledge, setPledge] = useRecoilState(pledgeState)
+
     useEffect(() => {
         fetch("http://localhost:3000/projects", {
         mode:"cors",
@@ -40,9 +42,18 @@ const App = () => {
        .then((res) => res.json())
        .then(result => {
         setCreator(result)
-        console.log(result)
        });
     }, [])
+
+    useEffect(() => {
+      fetch("http://localhost:3000/pledge", {
+         mode:"cors",
+     })
+     .then((res) => res.json())
+     .then(result => {
+      setPledge(result)
+     });
+  }, [])
 
       /*======================================COMMENTS===========================================*/
   const [comments, setComments] = useRecoilState(commentState);
@@ -61,7 +72,7 @@ const App = () => {
     <>
     <Router>
     <Routes>
-        <Route path='/' element={campaign.length !== 0 && creator.length !== 0 && <Campaign campaign={campaign} creator={creator} />} />
+        <Route path='/' element={pledge.length !== 0 && campaign.length !== 0 && creator.length !== 0 && <Campaign pledge={pledge} campaign={campaign} creator={creator} />} />
         <Route path='/faq' element={<Faq />} />
         <Route path='/updates' element={<Updates />} />
         <Route path='/comments' element={<Comments comments={comments} />} />
