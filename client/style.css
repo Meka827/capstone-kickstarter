@@ -14,6 +14,10 @@
   box-sizing: border-box;
 }
 
+a{
+    text-decoration:none;
+}
+
 .accordian {
   width: 650px;
 }
@@ -360,4 +364,129 @@ max-width: 816px;
     display:flex;
     justify-content:space-between;
     align-items: center;
+}
+
+/* Navbar */
+
+.nav-bar{
+    height:10vh;
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid lightgray;
+    border-top:1px solid lightgray;
+    margin-bottom:5rem;
+}
+
+.link{
+    color:var(--text-color);
+    text-decoration:none;
+    font-size:0.9rem;
+    margin:0 20px
+}
+
+.link:hover{
+    color:var(--accent-color);
+    transition:0.2s ease-in-out;
+}
+
+
+/* end */
+
+/* card */
+
+.project-header h2{
+    font-size:1.6rem;
+}
+
+.project-header p{
+    font-size:1rem;
+}
+.card-container{
+    max-width:1140px;
+    margin:0 auto;
+}
+
+
+
+.card-grid{
+    display:grid;
+    grid-template-columns:70% 30%;
+    gap:2rem;
+}
+
+.grid-item h3{
+    font-size:1.9rem;
+    color:var(--text-color);
+}
+
+.grid-item p{
+    font-size:0.9rem;
+    color:var(--text-color);
+}
+
+.pledge-container{
+    border-top:6px solid var(--accent-color);
+    display:flex;
+    flex-direction:column;
+    align-items:start;
+}
+
+.pledge .btn{
+    background-color:var(--accent-color);
+    color:#fff;
+    border:none;
+    padding:15px 30px;
+    font-size:1rem;
+    width:100%;
+
+}
+
+.pledge a{
+    color:#fff;
+}
+
+.pledge-amount h3{
+    color:var(--accent-color);
+}
+
+.btn-icons .remind-me-btn{
+    background-color:#fff;
+    color:var(--text-color);
+    padding:15px 30px;
+    width:50%;
+    border:1px solid lightgrey;
+}
+
+.btn-icons{
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    width:100%;
+}
+
+.btn-icons i{
+    font-size:0.9rem;
+    margin:0 20px 0 0;
+    cursor:pointer;
+}
+
+
+.backer-trust{
+    background-color:#f6f2eb;
+    height:20vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.bt-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:5rem;
+}
+
+.backer-trust div{
+    width:341px;
+    font-size:1.2rem;
 }

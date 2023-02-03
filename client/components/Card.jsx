@@ -28,19 +28,28 @@ const Card = () => {
             <h2>{title}</h2>
             <p>{description}</p>
         </div>
-        <div className='pledge' >
+        <div className ="card-grid">
+        <div className ="video grid-item">
+        <iframe width="800" height="480" src="https://www.youtube.com/embed/8ue30jwlq0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div className='pledge grid-item' >
             <div className='pledge-container'>
                 <span className="pledge-amount" >
-                    ${pledge_amount}
+                    <h3>${pledge_amount}</h3>
+                    <p>pledged of ${pledge_goal} goal</p>
                 </span>
                 <span className='backers' >
-                    {backers}
+                    <h3>{backers}</h3>
+                    <p>backers</p>
                 </span>
-                <span className='daystogo' >{difference}</span>
+                <span className='daystogo' >
+                <h3>{difference}</h3>
+                <p>days to go</p>
+                </span>
                 {/* <span className='goal-date' >
                     {goal_date}
                 </span> */}
-                <span className='pledge-goal' >
+                {/* <span className='pledge-goal' >
                     <span className='money' >
                         pledged of ${pledge_goal} goal
                     </span>
@@ -48,22 +57,37 @@ const Card = () => {
                 <span className='backers-text' >
                     backers
                 </span>
-                <span className='daystogo-text' >days to go</span>
+                <span className='daystogo-text' >days to go</span> */}
+                <button type="button" className="btn"> <a href="">Back this project</a></button>
+            <div className="btn-icons">
+                <button className=" remind-me-btn btn">Remind me</button>
+                <div className="icons">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-code"></i>
+                </div>
+            </div>
+            <p>
+                <a href="#">All or nothing.  </a>
+                This project will only be funded if it reaches its goal by {goal_date}.
+            </p>
             </div>
         </div>
-        <div className='paragraph' ></div>
+        {/* <div className='paragraph' ></div>
       </div>
       <div className='events' >
         <div className='events-grid' >
-            <a href="">Back this project</a>
+           <button type="button" className="btn"> <a href="">Back this project</a></button>
             <div></div>
             <p>
                 <a href="">All or nothing.  </a>
                 This project will only be funded if it reaches its goal by {goal_date}.
             </p>
-        </div>
-      </div>
-      <div className='backer-trust'>
+        </div> */}
+    </div>
+    </div>
+    <div className='backer-trust'>
         <div className='bt-container'>
             <div>
                 <div>
@@ -90,9 +114,9 @@ const Card = () => {
                 </div>
             </div>
         </div>
-      </div>
     </div>
-  );
+    </div>
+);
 }
 
 export default Card;
