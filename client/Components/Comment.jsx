@@ -17,11 +17,10 @@ const Comments = () => {
                 <div className="border-left">
                   <p className="type-14">
                     This is your space to offer support and feedback. Remember
-                    to
-                    <a className="green"> be constructive</a> --there's a human
-                    behind this project.
+                    to <a className="green"> be constructive</a> - there's a
+                    human behind this project.
                   </p>
-                  <p>Have a question for the creator?</p>
+                  <p className="type-15">Have a question for the creator?</p>
                   <div className="faq-link">
                     <a>Check this project's FAQ</a>
                   </div>
@@ -39,36 +38,39 @@ const Comments = () => {
                     </button>
                   </div> */}
                   <ul className="comment-list">
-                    {/* {comments.map((com) => {
-                      return ( */}
-                    <li className="list-item">
-                      {comments.map((com) => {
-                        return (
+                    {comments.map((key) => {
+                      return (
+                        <li className="list-item" key={key.id}>
+                          {/* {comments.map((com) => {
+                            return ( */}
                           <div className="border-box">
                             <div className="commentor-info">
-                              <div>
-                                <img className="image" src={com.image}></img>
+                              <div className="comm">
+                                <img className="image" src={key.image}></img>
                                 <div>
-                                  <span className="user-name">
-                                    <p className="user-name-text" key={com.id}>
-                                      {com.name}
-                                    </p>
+                                  <span className="user-name-text" key={key.id}>
+                                    {key.name}
                                   </span>
-                                  <a></a>
+                                  <a className="comment-link">
+                                    <time className="time">{key.time}</time>
+                                  </a>
                                 </div>
                               </div>
                             </div>
                             <div className="comments">
-                              <p className="data-comment-text" key={com.id}>
-                                {com.comment}
-                              </p>
+                              <div className="w100">
+                                <p className="data-comment-text" key={key.id}>
+                                  {key.comment}
+                                </p>
+                              </div>
                             </div>
                           </div>
-                        );
-                      })}
-                    </li>
-                    {/* );
-                    })} */}
+                          {/* );
+                          })} */}
+                        </li>
+                      );
+                    })}
+                    ;
                   </ul>
                   <div></div>
                 </div>
