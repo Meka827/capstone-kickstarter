@@ -14,3 +14,8 @@ export const creatorState = atom({
   key: "creator",
   default: [],
 });
+
+export const pledgeState = atom({
+  key: "pledge",
+  default: [],
+});

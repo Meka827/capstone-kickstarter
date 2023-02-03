@@ -2,18 +2,9 @@ import React from "react";
 import NavBar from "./NavBar";
 import Support from "./Support";
 
-const obj = [
-{
-  id: 1,
-  subTitle: "Pledge US$ 30 or more",
-  title: "Pledge Manager Tier",
-  decription: "Not sure what tier to get, or you only want add-ons? Back at this level and you will be in the pledge manager with a $30 credit that can be used toward add-ons and/or whatever tier you want (and shipping of course). You don't need to choose add-ons now.",
-  includes: "",
-  amount: 30
-}
-]
 
-const Campaign = (props) => {
+
+const Campaign = ({ campaign, pledge, creator }) => {
   return (
     <>
       <NavBar />
@@ -29,21 +20,21 @@ const Campaign = (props) => {
             <div>Story</div>
             <div>
               <h1>
-                <b>{props.campaign[0].title}</b>
+                <b>{campaign[0].title}</b>
               </h1>
-              <div>{props.campaign[0].summary}</div>
+              <div>{campaign[0].summary}</div>
             </div>
           </div>
-          <div className="image" src={props.campaign[0].image}></div>
+          <div className="image" src={campaign[0].image}></div>
           <div className="feature-bullets">
             <ul>
-              <li>{props.campaign[0].bullet_one}</li>
-              <li>{props.campaign[0].bullet_two}</li>
-              <li>{props.campaign[0].bullet_three}</li>
+              <li>{campaign[0].bullet_one}</li>
+              <li>{campaign[0].bullet_two}</li>
+              <li>{campaign[0].bullet_three}</li>
             </ul>
-            <div>{props.campaign[0].bullet_flavor}</div>
+            <div>{campaign[0].bullet_flavor}</div>
           </div>
-          <div className="image" src={props.campaign[0].image}></div>
+          <div className="image" src={campaign[0].image}></div>
           <div>
             <h1>
               <b>This Kickstart Features:</b>
@@ -78,23 +69,23 @@ const Campaign = (props) => {
             any non-refundable fees collected by Kickstarter. We do not fulfill
             refund requests after that date. If, for any reason, we are unable
             to fulfill any part of your order (I.E. add-ons), we will give you a
-            FULL refund for what we weren’t able to fulfill. Refunds will be
+            FULL refund for what we weren't able to fulfill. Refunds will be
             processed using the method of our choosing (usually PayPal).
           </div>
         </div>
       </div>
       <div className="creator-container">
           <div>
-            <b>{props.creator[0].name}</b>
+            <b>{creator[0].name}</b>
           </div>
           <div>
-            {props.creator[0].created} created - {props.creator[0].backed} backed
+            {creator[0].created} created - {creator[0].backed} backed
           </div>
           <br></br>
-          <div>{props.creator[0].bio}</div>
+          <div>{creator[0].bio}</div>
         </div>
       <div className="support-container" >
-        {obj.map((obj => <Support key={obj.id} obj={obj} />))}
+        {pledge.map((pledge => <Support key={pledge.id} pledge={pledge} />))}
       </div>
       </div>
     </>

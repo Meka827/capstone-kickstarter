@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS projects;
 DROP TABLE IF EXISTS campaign;
 DROP TABLE IF EXISTS creator;
 DROP TABLE IF EXISTS comments;
+DROP TABLE IF EXISTS pledge;
 
 CREATE TABLE projects (
     id SERIAL,
@@ -27,13 +28,12 @@ CREATE TABLE campaign (
 
 CREATE TABLE pledge (
     id SERIAL,
-    tier_1 TEXT,
-    tier_1_req TEXT,
-    tier_2 TEXT,
-    tier_1_req TEXT,
-    tier_3 TEXT,
-    tier_3_req TEXT
-)
+    title TEXT,
+    description TEXT,
+    includes TEXT,
+    amount INT
+);
+
 CREATE TABLE creator (
     id SERIAL,
     name TEXT,
@@ -107,22 +107,15 @@ Games CEO - Designer and Co-Creator of Epic Card Game. - Co-Creator of the Star 
 of the Hero Realms Deckbuilding game. - Co-Founder/Co-Designer of the Ascension Deckbuilding Game. - Gary Games Inc. 
 COO - EpicTCG CEO - Your Move Games Inc. Co-CEO - Stoneblade Entertainment Organized Play Director - Game Store 
 Owner - Premier Tournament Organizer - Tournament Judge (Level 3 Magic Judge) - Organized Play Designer/Consultant. Rob 
-has founded or co-founded multiple game companies and successfully published dozens of games and gaming accessories.', 15, 91, 'Sudbury, MA')
+has founded or co-founded multiple game companies and successfully published dozens of games and gaming accessories.', 15, 91, 'Sudbury, MA');
 
 
 
-INSERT INTO pledge (tier_1, tier_1_req, tier_2, tier_1_req, tier_3, tier_3_req) VALUES ('Not sure what tier to get, or you only want add-ons? Back at this 
-level and you will be in the pledge manager with a $30 credit that can be used toward add-ons and/or whatever tier you want (and shipping of course). You 
-dont need to choose add-ons now.Shipping (and VAT or sales taxes where applicable) will be charged after the campaign ends via the Pledge Manager.', 'Pledge 
-US$ 30 or more', 'You Get the 300-card Hero Realms Dungeons Box Set and all the Stretch Goals!
-Play 2 player PVP with or without characters! Level up the Alchemist and Barbarian from level 1 to 24! Play multiplayer with the four included standard decks 
-or even a 6 player Emperor game with one team led by the Alchemist and the other by the Barbarian. Play the 12 part dungeon adventure, leveling up as you go. 
-Fight monsters, gain experience, learn new skills, abilities, and find fantastic treasures!
-This complete 1-6 player game includes: A beautiful double-sided game board, 3 score dials, An all-new 80 card market deck, 4 standard starting decks, the 
-Alchemist Character Pack, the Alchemist Adventure Deck, the Barbarian Character Pack, the Barbarian Adventure Deck, and a 12 encounter solo or cooperative 
-campaign full of deadly Masters and minions to battle against!
-Shipping (and VAT or sales taxes where applicable) will be charged after the campaign ends via the Pledge Manager.', 'Pledge $59 or more', 'If you want Dungeons
- AND all the new characters, get this tier! Save $27!
-Youll get the all-new 80 card market deck, the beautiful double-sided game board, 4 score dials, the 12 part dungeon adventure, all 6 new characters with their
- Adventure Deck gear (including the Kickstarter Exclusive Necromancer) and of course youll get all the unlocked Stretch Goals!
-Shipping (and VAT or sales taxes where applicable) will be charged after the campaign ends via the Pledge Manager.', 'Pledge $99 or more')
+INSERT INTO pledge (title, description, includes, amount) VALUES ('Pledge Manager Tier', 'Not sure what tier to get, or you only want add-ons? Back at this level and you will be in the pledge manager with a $30 credit that can be used toward add-ons and/or whatever tier you want (and shipping of course). You don''t need to choose add-ons now.', '', 30);
+INSERT INTO pledge (title, description, includes, amount) VALUES ('Dungeons Tier', 'You Get the 300-card Hero Realms Dungeons Box Set and all the Stretch Goals! \n Play 2 player PVP with or without characters! Level up the Alchemist and Barbarian from level 1 to 24! Play multiplayer with the four included standard decks or even a 6 player Emperor game with one team led by the Alchemist and the other by the Barbarian. Play the 12 part dungeon adventure, leveling up as you go. Fight monsters, gain experience, learn new skills, abilities, and find fantastic treasures!
+This complete 1-6 player game includes: A beautiful double-sided game board, 3 score dials, An all-new 80 card market deck, 4 standard starting decks, the Alchemist Character Pack, the Alchemist Adventure Deck, the Barbarian Character Pack, the Barbarian Adventure Deck, and a 12 encounter solo or cooperative campaign full of deadly Masters and minions to battle against!','Hero Realms Dungeons *All Unlocked Stretch Goals - Includes KICKSTARTER EXCLUSIVES', 59);
+INSERT INTO pledge (title, description, includes, amount) VALUES ('Adventure Tier', 'If you want Dungeons AND all the new characters, get this tier! Save $27! \n You''ll get the all-new 80 card market deck, the beautiful double-sided game board, 4 score dials, the 12 part dungeon adventure, all 6 new characters with their Adventure Deck gear (including the Kickstarter Exclusive Necromancer) and of course you''ll get all the unlocked Stretch Goals!','Hero Realms Dungeons * Bard Character Pack * Bard Adventure Deck * Druid Character Pack * Druid Adventure Deck * Monk Character Pack * Monk Adventure Deck * Necromancer Character Pack - KICKSTARTER EXCLUSIVE * Necromancer Adventure Deck - KICKSTARTER EXCLUSIVE * All Unlocked Stretch Goals - Includes KICKSTARTER EXCLUSIVES', 99);
+INSERT INTO pledge (title, description, includes, amount) VALUES ('Hero Realms All-In Tier', 'Save $142! \n You get EVERY Hero Realms card form ALL 3 Hero Realms Kickstarters plus the big, beautiful Adventure Storage Box to keep them in! That is everything from this Kickstarter''s Adventure Tier, plus every card from the Hero Realms Journeys Kickstarter and the original Hero Realms Kickstarter including all their Kickstarter Exclusive Stretch Goals! \n This tier does not include optional accessories such as card sleeves or additional score dials.','Hero Realms Dungeons * Bard Character Pack * Bard Adventure Deck * Druid Character Pack * Druid Adventure Deck * Monk Character Pack * Monk Adventure Deck * Necromancer Character Pack - KICKSTARTER EXCLUSIVE * Necromancer Adventure Deck - 
+KICKSTARTER EXCLUSIVE * All Unlocked Stretch Goals - Includes KICKSTARTER EXCLUSIVES * Hero Realms Base Game * Cleric Character Pack * Fighter Character Pack * Ranger Character Pack * Thief Character Pack * Wizard Character Pack * Cleric Adventure Deck * Fighter Adventure Deck * Ranger Adventure Deck * Thief Adventure Deck * Wizard Adventure Deck * Dragon Boss Deck * Lich Boss Deck * Journeys Conquest Pack * Journeys Discovery Pack * Journeys Hunters Pack * Journeys Travelers Pack * Ancestry Pack * The Ruin of Thandar Campaign Deck * The Lost Village Campaign Deck * Watery Graves Campaign Deck * 1st Hero Realms Kickstarter Stretch Goal Promo Pack (35 cards!) * Journeys Kickstarter Promo Pack * Adventure Storage Box', 299);
+INSERT INTO pledge (title, description, includes, amount) VALUES ('Retailer Tier - Dungeons Prerelease Kit', 'FOR VERIFIED BRICK AND MORTAR RETAIL STORES ONLY! \n NOT FOR ONLINE SALES! \n Limit 2 kits per store. \n The Hero Realms Dungeons Prerelease Kit will include 6 copies of everything in the Adventure Tier. You are free to sell items separately, and we will let you know our suggested retail prices for the Kickstarter Exclusives and Stretch Goals. We expect the combined MSRP for all the included items to be over $900. \n Your store must be a member of (or join) the Wizards Retail Guild to get this Prerelease Kit. The Wizards Retail Guild is free to join and has no membership fees. You can sign your store up here: https://www.wisewizardgames.com/retailer/ \n
+This kit includes FREE SHIPPING to stores withing the 48 contiguous US States. For stores outside the 48 contiguous US States shipping will be charged separately.','6x Hero Realms Dungeons * 6x Bard Character Pack * 6x Bard Adventure Deck * 6x Druid Character Pack * 6x Druid Adventure Deck * 6x Monk Character Pack * 6x Monk Adventure Deck * 6x Necromancer Character Pack - KICKSTARTER EXCLUSIVE * 6x Necromancer Adventure Deck - KICKSTARTER EXCLUSIVE * 6x All Unlocked Stretch Goals - Includes KICKSTARTER EXCLUSIVES', 399);

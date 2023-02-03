@@ -10,9 +10,14 @@ import dotenv from "dotenv";
 //   password: "password",
 // });
 
+<<<<<<< HEAD
 dotenv.config();
 // {path: "../.env"}
 const sql = postgres(process.env.DATABASE_URL);
+=======
+
+const sql = postgres("postgres://localhost/kickstarter");
+>>>>>>> 316f808a558026a7d4a83fc921db0e6f602cfd55
 const app = express();
 
 //=============Middleware=======================================
