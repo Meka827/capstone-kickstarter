@@ -17,6 +17,7 @@ const App = () => {
   const [campaign, setCampaign] = useRecoilState(campaignState);
 
     useEffect(() => {
+      
         fetch("/api/projects", {
         mode:"cors",
        })
