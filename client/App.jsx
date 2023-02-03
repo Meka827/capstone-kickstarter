@@ -7,6 +7,7 @@ import Campaign from './components/Campaign';
 import Community from './components/Community';
 import Updates from './components/Updates';
 import Comments from './components/Comment';
+import TopNav from './components/TopNav';
 
 
 
@@ -17,7 +18,8 @@ const App = () => {
   const [pledge, setPledge] = useRecoilState(pledgeState)
 
     useEffect(() => {
-        fetch("http://localhost:3000/projects", {
+      
+        fetch("/api/projects", {
         mode:"cors",
        })
        .then((res) => res.json())
@@ -26,7 +28,7 @@ const App = () => {
     }, [])
 
     useEffect(() => {
-        fetch("http://localhost:3000/campaign", {
+        fetch("/api/campaign", {
            mode:"cors",
        })
        .then((res) => res.json())
@@ -36,7 +38,7 @@ const App = () => {
     }, []) 
     
     useEffect(() => {
-        fetch("http://localhost:3000/creator", {
+        fetch("/api/creator", {
            mode:"cors",
        })
        .then((res) => res.json())
@@ -59,7 +61,7 @@ const App = () => {
   const [comments, setComments] = useRecoilState(commentState);
 
   useEffect(() => {
-    fetch("http://localhost:3000/comments", {
+    fetch("/api/comments", {
       mode: "cors",
     })
       .then((res) => res.json())
@@ -70,6 +72,7 @@ const App = () => {
 
   return (
     <>
+    <TopNav />
     <Router>
     <Routes>
         <Route path='/' element={pledge.length !== 0 && campaign.length !== 0 && creator.length !== 0 && <Campaign pledge={pledge} campaign={campaign} creator={creator} />} />
