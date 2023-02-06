@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
 import { useRecoilState } from "recoil";
 import { campaignState, commentState, creatorState, pledgeState } from "./state";
-import Faq from './components/Faq';
-import Campaign from './components/Campaign';
-import Community from './components/Community';
-import Updates from './components/Updates';
-import Comments from './components/Comment';
-
+import Faq from './Components/Faq';
+import Campaign from './Components/Campaign';
+import Community from './Components/Community';
+import Updates from './Components/Updates';
+import Comments from './Components/Comment';
+import TopNav from './Components/TopNav';
 
 
 
