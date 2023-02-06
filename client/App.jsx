@@ -47,7 +47,7 @@ const App = () => {
     }, [])
 
     useEffect(() => {
-      fetch("http://localhost:3000/pledge", {
+      fetch("/api/pledge", {
          mode:"cors",
      })
      .then((res) => res.json())
