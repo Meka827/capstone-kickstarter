@@ -39,9 +39,9 @@ const NavBar = () => {
                     </Link>
                 </div>
             </div>
-        </nav>
+          </nav>
         </>
-    );
+      );
 }
 
 export default NavBar;
