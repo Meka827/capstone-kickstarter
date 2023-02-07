@@ -10,6 +10,9 @@ import dotenv from "dotenv";
 //   password: "password",
 // });
 
+// dotenv.config();
+// // {path: "../.env"}
+// const sql = postgres(process.env.DATABASE_URL);
 
 const sql = postgres("postgres://localhost/kickstarter");
 const app = express();
@@ -61,6 +64,13 @@ app.get("/api/campaign/:id", (req, res) => {
       res.send("Not Found");
     }
   });
+});
+
+app.get("/api/pledge", (req, res) => {
+  sql`SELECT * FROM pledge`.then((results) => {
+    res.send(results);
+  });
+  console.log("is working");
 });
 
 
