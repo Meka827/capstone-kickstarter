@@ -18,6 +18,10 @@ a{
     text-decoration:none;
 }
 
+li{
+    list-style:none;
+}
+
 .accordian {
   width: 650px;
 }
@@ -32,6 +36,7 @@ body {
   font-family: "Maison Neue Book", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   color: #282828;
+  background-color:var(--background-color);
 }
 
 .bt-container {
@@ -712,6 +717,7 @@ h5 {
     border-bottom:1px solid lightgray;
     border-top:1px solid lightgray;
     margin-bottom:5rem;
+    background-color:#fff;
 }
 
 .link{
@@ -827,3 +833,47 @@ h5 {
     width:341px;
     font-size:1.2rem;
 }
+<<<<<<< HEAD
+
+/* end */
+
+
+/* nav top bar */
+.top-navbar{
+    background-color:#fff;
+}
+
+.top-navbar ul{
+    height:10vh;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content: space-between;
+    padding:0 30px;
+    border-bottom:1px solid lightgray;
+}
+
+.top-navbar li{
+    cursor:pointer;
+    font-size:0.9rem;
+}
+
+.top-navbar li:hover{
+    color:var(--accent-color);
+    transition:0.2s ease-in-out;
+}
+
+.left-nav , .right-nav, .logo{
+    display:flex;
+    gap:2rem;
+    align-items: center;
+}
+
+.logo{
+    color:var(--span-color);
+    text-transform: uppercase;
+    font-size:0.8rem;
+    letter-spacing: 1px;;
+}
+=======
+>>>>>>> 8dde01998b1b49ec18a6961ade3ef6987fa15555
