@@ -22,8 +22,8 @@ const Card = () => {
   return (
     <div>
       <div className='card-container'>
-        {/* <div className='image'></div>
-        <div className='location' ></div> */}
+        <div className='image'></div>
+        <div className='location' ></div>
         <div className='project-header' >
             <h2>{title}</h2>
             <p>{description}</p>
