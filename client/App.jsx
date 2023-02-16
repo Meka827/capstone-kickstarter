@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
 import { useRecoilState } from "recoil";
 import { campaignState, commentState, creatorState, pledgeState } from "./state";
-import CacheRoute, { CacheSwitch } from 'react-router-cache-route'
 import Faq from './Components/Faq';
 import Campaign from './Components/Campaign';
 import Community from './Components/Community';
@@ -75,11 +74,11 @@ const App = () => {
     <TopNav />
     <Router>
     <Routes>
-        <CacheRoute path='/' element={pledge.length !== 0 && campaign.length !== 0 && creator.length !== 0 && <Campaign pledge={pledge} campaign={campaign} creator={creator} />} />
-        <CacheRoute path='/#/faq' element={<Faq />} />
-        <CacheRoute path='/#/updates' element={<Updates />} />
-        <CacheRoute path='/#/comments' element={<Comments comments={comments} />} />
-        <CacheRoute path='/#/community' element={<Community />} />
+        <Route path='/' element={pledge.length !== 0 && campaign.length !== 0 && creator.length !== 0 && <Campaign pledge={pledge} campaign={campaign} creator={creator} />} />
+        <Route path='/#/faq' element={<Faq />} />
+        <Route path='/#/updates' element={<Updates />} />
+        <Route path='/#/comments' element={<Comments comments={comments} />} />
+        <Route path='/#/community' element={<Community />} />
     </Routes>
     </Router>
     </>
