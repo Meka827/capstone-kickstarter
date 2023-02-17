@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route}from 'react-router-dom';
 import { useRecoilState } from "recoil";
 import { campaignState, commentState, creatorState, pledgeState } from "./state";
 import Faq from './Components/Faq';
@@ -69,17 +69,19 @@ const App = () => {
       });
   }, []);
 
+  
+
   return (
     <>
     <TopNav />
     <Router>
-    <Routes>
+    <Switch>
         <Route path='/' element={pledge.length !== 0 && campaign.length !== 0 && creator.length !== 0 && <Campaign pledge={pledge} campaign={campaign} creator={creator} />} />
         <Route path='/#/faq' element={<Faq />} />
         <Route path='/#/updates' element={<Updates />} />
         <Route path='/#/comments' element={<Comments comments={comments} />} />
         <Route path='/#/community' element={<Community />} />
-    </Routes>
+    </Switch>
     </Router>
     </>
   );
