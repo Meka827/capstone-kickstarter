@@ -19,22 +19,22 @@ const NavBar = () => {
                     </Link>  
                 </div>
                 <div className='menu-item' >
-                    <Link className="link" to="/#/faq" activestyle="true">
+                    <Link className="link" to="/faq" activestyle="true">
                         FAQ
                     </Link>
                 </div>
                 <div className='menu-item' >
-                    <Link className="link" to="/#/updates" activestyle="true">
+                    <Link className="link" to="/updates" activestyle="true">
                         Updates
                     </Link>
                 </div>
                 <div className='menu-item' >
-                    <Link className="link" to="/#/comments" activestyle="true">
+                    <Link className="link" to="/comments" activestyle="true">
                         Comments
                     </Link>
                 </div>
                 <div className='menu-item' >
-                    <Link className="link" to="/#/community" activestyle="true">
+                    <Link className="link" to="/community" activestyle="true">
                         Community
                     </Link>
                 </div>
