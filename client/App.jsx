@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route}from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate }from 'react-router-dom';
 import { useRecoilState } from "recoil";
 import { campaignState, commentState, creatorState, pledgeState } from "./state";
 import Faq from './Components/Faq';
@@ -79,6 +79,7 @@ const App = () => {
         <Route path='/updates' element={<Updates />} />
         <Route path='/comments' element={<Comments comments={comments} />} />
         <Route path='/community' element={<Community />} />
+        <Route path='/faq' element={<Navigate to="/faq" />} />
     </Routes>
     </Router>
     </>
