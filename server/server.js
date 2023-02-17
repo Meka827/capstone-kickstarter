@@ -21,6 +21,9 @@ const app = express();
 app.use(express.json());
 app.use(express.static("./client"));
 app.use(cors());
+app.get('/*', (req, res) => {
+  res.sendFile("./client/index.html")
+})
 
 //==============Routes====================================
 
@@ -106,6 +109,10 @@ app.get("/api/comments", (req, res) => {
   });
   console.log("is working");
 });
+
+// app.get("/faq", (req, res) => {
+//   res.send()
+// })
 
 //==============ERROR HANDLERS==============================================
 app.use((err, req, res, mext) => {
