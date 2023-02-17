@@ -21,9 +21,9 @@ const app = express();
 app.use(express.json());
 app.use(express.static("./client"));
 app.use(cors());
-app.get('/*', (req, res) => {
-  res.sendFile("../client/index.html")
-})
+// app.get('/*', (req, res) => {
+//   res.sendFile("./client/index.html")
+// })
 
 //==============Routes====================================
 
